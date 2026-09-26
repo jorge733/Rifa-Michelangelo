@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rifa Segundo Medio · Colegio Waldorf Michelangelo</title>
+  <meta name="description" content="Participa en la rifa del Segundo Medio del Colegio Waldorf Michelangelo. Elige tus números y apoya al curso.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎟️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <span class="brand">🎟️ Rifa 2° Medio</span>
+      <div class="nav-links">
+        <a href="#premios">Premios</a>
+        <a href="#numeros">Números</a>
+        <a href="#comprar">Cómo comprar</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow" id="colegio"></p>
+      <h1>Gran Rifa del <span id="curso"></span></h1>
+      <p class="lead" id="motivo"></p>
+      <div class="hero-stats">
+        <div class="stat"><strong id="precio"></strong><span>por número</span></div>
+        <div class="stat"><strong id="disponibles"></strong><span>disponibles</span></div>
+        <div class="stat"><strong id="fecha"></strong><span>día del sorteo</span></div>
+      </div>
+      <a href="#numeros" class="btn btn-primary">Elegir mis números</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="countdown-section">
+      <h2>El sorteo es en</h2>
+      <div class="countdown" id="countdown">
+        <div><span id="cd-dias">0</span><small>días</small></div>
+        <div><span id="cd-horas">0</span><small>horas</small></div>
+        <div><span id="cd-min">0</span><small>minutos</small></div>
+        <div><span id="cd-seg">0</span><small>segundos</small></div>
+      </div>
+      <p class="muted" id="lugar"></p>
+    </section>
+
+    <section id="premios" class="section">
+      <h2>Premios</h2>
+      <div class="prizes" id="prizes"></div>
+    </section>
+
+    <section id="numeros" class="section">
+      <h2>Elige tus números</h2>
+      <p class="muted">Toca los números que quieras. Los grises ya fueron vendidos.</p>
+      <div class="toolbar">
+        <input type="search" id="buscar" placeholder="Buscar número…" inputmode="numeric" aria-label="Buscar número">
+        <button class="btn btn-ghost" id="azar">🎲 Número al azar</button>
+        <div class="legend">
+          <span><i class="dot dot-free"></i>Disponible</span>
+          <span><i class="dot dot-sel"></i>Seleccionado</span>
+          <span><i class="dot dot-sold"></i>Vendido</span>
+        </div>
+      </div>
+      <div class="grid" id="grid" role="group" aria-label="Números de la rifa"></div>
+    </section>
+
+    <section id="comprar" class="section">
+      <h2>Cómo comprar</h2>
+      <ol class="steps">
+        <li><strong>Elige</strong> tus números en la grilla.</li>
+        <li><strong>Transfiere</strong> el total a la cuenta del curso.</li>
+        <li><strong>Envía</strong> el comprobante por WhatsApp con tu nombre y números.</li>
+      </ol>
+      <div class="bank" id="bank"></div>
+    </section>
+  </main>
+
+  <aside class="cart" id="cart" aria-live="polite">
+    <div class="cart-info">
+      <span id="cart-count">0 números</span>
+      <strong id="cart-total">$0</strong>
+    </div>
+    <div class="cart-actions">
+      <button class="btn btn-ghost btn-sm" id="limpiar">Limpiar</button>
+      <a class="btn btn-primary btn-sm" id="whatsapp" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <p>Hecho con cariño por el <span id="curso-footer"></span> · <span id="colegio-footer"></span></p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
