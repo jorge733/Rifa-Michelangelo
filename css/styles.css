@@ -41,6 +41,14 @@ body {
   opacity: .95;
 }
 
+.hero .motivo {
+  max-width: 420px;
+  margin: 16px auto 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: .9;
+}
+
 .hero .precio {
   display: inline-block;
   margin-top: 24px;
