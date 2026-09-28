@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: #f7f5ef;
@@ -196,6 +200,207 @@ main {
   border-radius: 12px;
   font-size: 14px;
   line-height: 1.5;
+}
+
+
+/* ---------- Encabezado de los pasos 2 y 3 ---------- */
+
+.encabezado-paso {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.volver {
+  border: 0;
+  background: none;
+  color: #7b3f28;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 12px 12px 0;
+  cursor: pointer;
+}
+
+.progreso {
+  font-size: 13px;
+  color: #777;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+
+/* ---------- Números elegidos (chips) ---------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.chip {
+  background: #7b3f28;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 7px 12px;
+  border-radius: 10px;
+}
+
+.linea-total {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.linea-total strong {
+  color: #7b3f28;
+}
+
+.boton-secundario {
+  width: 100%;
+  border: 1.5px solid #e3d8cc;
+  background: white;
+  color: #7b3f28;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 13px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.boton-secundario:active {
+  background: #faf8f4;
+}
+
+
+/* ---------- Formulario ---------- */
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo:last-child {
+  margin-bottom: 0;
+}
+
+.campo label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.opcional {
+  font-weight: normal;
+  color: #888;
+}
+
+/* 16px evita que el iPhone haga zoom al tocar el campo */
+.campo input {
+  width: 100%;
+  font-size: 16px;
+  padding: 14px;
+  border: 1.5px solid #e3d8cc;
+  border-radius: 12px;
+  background: #fffdfa;
+  color: #292929;
+  font-family: inherit;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #b96c45;
+  box-shadow: 0 0 0 3px rgba(185,108,69,.15);
+}
+
+.campo input[aria-invalid="true"] {
+  border-color: #c0392b;
+}
+
+.campo-telefono {
+  display: flex;
+  gap: 8px;
+}
+
+.prefijo {
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  background: #f3eee7;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.error:empty {
+  display: none;
+}
+
+
+/* ---------- Resumen ---------- */
+
+.detalle {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px 16px;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+.detalle dt {
+  color: #777;
+}
+
+.detalle dd {
+  font-weight: bold;
+  text-align: right;
+  word-break: break-word;
+}
+
+.totales {
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+}
+
+.total-final {
+  font-size: 18px;
+  color: #7b3f28 !important;
+}
+
+.aviso {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+
+/* ---------- Solicitud lista ---------- */
+
+.listo {
+  text-align: center;
+}
+
+.listo-icono {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.listo p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 22px;
 }
 
 

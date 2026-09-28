@@ -11,7 +11,7 @@
 
 <body>
 
-  <header class="hero">
+  <header class="hero" id="portada">
     <div class="curso">2° Medio · 2026</div>
 
     <h1>Gran Rifa</h1>
@@ -29,74 +29,243 @@
 
   <main>
 
-    <section class="card">
-      <h2>🎁 Premios</h2>
+    <!-- =============== PASO 1: ELEGIR NÚMEROS =============== -->
 
-      <div class="premio">
-        <strong>🥇 Primer premio</strong>
-        Premio principal por definir
+    <div class="paso" data-paso="numeros">
+
+      <section class="card">
+        <h2>🎁 Premios</h2>
+
+        <div class="premio">
+          <strong>🥇 Primer premio</strong>
+          Premio principal por definir
+        </div>
+
+        <div class="premio">
+          <strong>🥈 Segundo premio</strong>
+          Premio por definir
+        </div>
+
+        <div class="premio">
+          <strong>🥉 Tercer premio</strong>
+          Premio por definir
+        </div>
+      </section>
+
+      <section class="card fecha">
+        <p>El sorteo se realizará el</p>
+        <br>
+        <strong>📅 Fecha por confirmar</strong>
+      </section>
+
+      <section class="card">
+
+        <h2 class="titulo-numeros">
+          Elige tus números
+        </h2>
+
+        <p class="instruccion">
+          Toca uno o más números disponibles para seleccionarlos.
+        </p>
+
+        <div class="leyenda">
+          <span>
+            <i class="punto disponible"></i>
+            Disponible
+          </span>
+
+          <span>
+            <i class="punto seleccionado"></i>
+            Seleccionado
+          </span>
+
+          <span>
+            <i class="punto vendido"></i>
+            Vendido
+          </span>
+        </div>
+
+        <div
+          class="numeros"
+          id="numeros">
+        </div>
+
+        <div
+          class="seleccion-lista"
+          id="seleccionLista">
+          Aún no has seleccionado números.
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!-- =============== PASO 2: DATOS DEL COMPRADOR =============== -->
+
+    <div class="paso" data-paso="datos" hidden>
+
+      <div class="encabezado-paso">
+        <button class="volver" type="button" data-accion="volver">
+          ← Volver
+        </button>
+        <span class="progreso">Paso 2 de 3</span>
       </div>
 
-      <div class="premio">
-        <strong>🥈 Segundo premio</strong>
-        Premio por definir
+      <section class="card">
+        <h2>Tus números</h2>
+
+        <div class="chips" id="chipsDatos"></div>
+
+        <p class="linea-total" id="lineaTotalDatos"></p>
+
+        <button class="boton-secundario" type="button" data-accion="volver">
+          Cambiar números
+        </button>
+      </section>
+
+      <form class="card" id="formDatos" novalidate>
+        <h2>Tus datos</h2>
+
+        <p class="instruccion">
+          Los usaremos solo para contactarte por tu reserva.
+        </p>
+
+        <div class="campo">
+          <label for="nombre">Nombre y apellido</label>
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            autocomplete="name"
+            autocapitalize="words"
+            enterkeyhint="next"
+            aria-describedby="errorNombre">
+          <p class="error" id="errorNombre"></p>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Celular (WhatsApp)</label>
+          <div class="campo-telefono">
+            <span class="prefijo">+56</span>
+            <input
+              id="telefono"
+              name="telefono"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="9 1234 5678"
+              enterkeyhint="next"
+              aria-describedby="errorTelefono">
+          </div>
+          <p class="error" id="errorTelefono"></p>
+        </div>
+
+        <div class="campo">
+          <label for="correo">
+            Correo <span class="opcional">(opcional)</span>
+          </label>
+          <input
+            id="correo"
+            name="correo"
+            type="email"
+            inputmode="email"
+            autocomplete="email"
+            autocapitalize="off"
+            spellcheck="false"
+            enterkeyhint="done"
+            aria-describedby="errorCorreo">
+          <p class="error" id="errorCorreo"></p>
+        </div>
+      </form>
+
+    </div>
+
+
+    <!-- =============== PASO 3: RESUMEN DE LA RESERVA =============== -->
+
+    <div class="paso" data-paso="resumen" hidden>
+
+      <div class="encabezado-paso">
+        <button class="volver" type="button" data-accion="volver">
+          ← Volver
+        </button>
+        <span class="progreso">Paso 3 de 3</span>
       </div>
 
-      <div class="premio">
-        <strong>🥉 Tercer premio</strong>
-        Premio por definir
-      </div>
-    </section>
+      <section class="card">
+        <h2>Revisa tu reserva</h2>
 
-    <section class="card fecha">
-      <p>El sorteo se realizará el</p>
-      <br>
-      <strong>📅 Fecha por confirmar</strong>
-    </section>
+        <dl class="detalle">
+          <dt>Nombre</dt>
+          <dd id="resumenNombre"></dd>
 
-    <section class="card">
+          <dt>Celular</dt>
+          <dd id="resumenTelefono"></dd>
 
-      <h2 class="titulo-numeros">
-        Elige tus números
-      </h2>
+          <dt id="resumenCorreoTitulo">Correo</dt>
+          <dd id="resumenCorreo"></dd>
+        </dl>
 
-      <p class="instruccion">
-        Toca uno o más números disponibles para seleccionarlos.
+        <button class="boton-secundario" type="button" data-accion="volver">
+          Editar datos
+        </button>
+      </section>
+
+      <section class="card">
+        <h2>Números</h2>
+
+        <div class="chips" id="chipsResumen"></div>
+
+        <dl class="detalle totales">
+          <dt>Cantidad</dt>
+          <dd id="resumenCantidad"></dd>
+
+          <dt>Valor por número</dt>
+          <dd id="resumenPrecio"></dd>
+
+          <dt class="total-final">Total a pagar</dt>
+          <dd class="total-final" id="resumenTotal"></dd>
+        </dl>
+
+        <button class="boton-secundario" type="button" id="cambiarDesdeResumen">
+          Cambiar números
+        </button>
+      </section>
+
+      <p class="aviso">
+        Al confirmar, tus números quedarán reservados y te mostraremos
+        los datos para realizar la transferencia.
       </p>
 
-      <div class="leyenda">
-        <span>
-          <i class="punto disponible"></i>
-          Disponible
-        </span>
+    </div>
 
-        <span>
-          <i class="punto seleccionado"></i>
-          Seleccionado
-        </span>
 
-        <span>
-          <i class="punto vendido"></i>
-          Vendido
-        </span>
-      </div>
+    <!-- =============== RESERVA ENVIADA (versión de prueba) =============== -->
 
-      <div
-        class="numeros"
-        id="numeros">
-      </div>
+    <div class="paso" data-paso="listo" hidden>
 
-      <div
-        class="seleccion-lista"
-        id="seleccionLista">
-        Aún no has seleccionado números.
-      </div>
+      <section class="card listo">
+        <div class="listo-icono">✅</div>
 
-    </section>
+        <h2>¡Solicitud lista!</h2>
+
+        <p>
+          <strong>Versión de prueba:</strong> tu reserva todavía no se guarda.
+          En la próxima etapa aquí aparecerán los datos para transferir
+          y la confirmación de tus números.
+        </p>
+
+        <button class="continuar" type="button" id="volverInicio">
+          Volver al inicio
+        </button>
+      </section>
+
+    </div>
 
   </main>
 
-  <div class="barra-compra">
+  <div class="barra-compra" id="barraCompra">
 
     <div class="barra-interior">
 
